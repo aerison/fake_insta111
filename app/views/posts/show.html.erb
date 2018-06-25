@@ -1,0 +1,21 @@
+<!-- <h1>Posts#show</h1>
+<p>Find me in app/views/posts/show.html.erb</p> -->
+
+<p>***<%= @post.id %> 번째 글***</p>
+<p><%= @post.title %></p>
+<p><%= @post.content %></p>
+
+<a href="/posts/<%= @post.id %>" data-method="delete" data-confirm="wanna delete?">[x]</a>
+<a href="/posts/<%= @post.id %>/edit">[Modify]</a>
+
+
+<form action="" method="post">
+  <input type="text" name="content" /><br />
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>" />
+  <input type="submit" />
+</form>
+
+<hr />
+<% @comments.each do |comment|%>
+<%= @comment.content%>
+<%end%>
